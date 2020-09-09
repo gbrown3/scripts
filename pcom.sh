@@ -4,7 +4,7 @@
 
 pre-commit run -a
 
-if [ [$# == 1] -a [$1 == "-c"] ]
+if [[ $# == 1 ]] && [[ $1 == "-c" ]]
 then    
     git commit -a -m "pre-commit"
     git push
