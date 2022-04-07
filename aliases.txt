@@ -1,0 +1,61 @@
+# All the aliases and bash functions I had baked into my startup script, with propriatary info and API keys removed.
+
+###########
+# Exports #
+###########
+
+# NVM - lets you set which version of node to use
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+#######################
+# Commonly Used Paths #
+#######################
+pathtoscripts=~/scripts
+path_to_cje_trigger=~/code/cje-trigger
+
+######################################
+# Fixes for SBT out of memory errors #
+######################################
+ulimit -S -n 4096
+export SBT_OPTS="-Xss2m"
+
+#################
+# Java settings #
+#################
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+
+###################################
+# To help debugging with IntelliJ #
+###################################
+alias enable_debug='export SBT_OPTS="-Xms512m -Xmx2048M -XX:MaxMetaspaceSize=512m -XX:NewRatio=2 -XX:+UseParallelGC -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"'
+alias disable_debug='export SBT_OPTS="-Xms512m -Xmx2048M -XX:MaxMetaspaceSize=512m -XX:NewRatio=2 -XX:+UseParallelGC"'
+
+##########
+# JMeter #
+##########
+alias jmeter='~/tools/apache-jmeter-4.0/bin/jmeter'
+alias jmeter_proxy='java -DsocksProxyHost=localhost -DsocksProxyPort=4670 -jar ~/tools/apache-jmeter-4.0/bin/ApacheJMeter.jar'
+
+#######
+# Git #
+#######
+alias git-latest-version='sh ~/scripts/git-latest-version.sh'
+alias git-prune='sh ~/scripts/git-clear-branches.sh'
+alias git-clean-slate='sh ~/scripts/git-clean-slate.sh'
+alias pcom='sh ~/scripts/pcom.sh'
+
+######################
+# Frontend Iterating #
+######################
+alias fe-iterate='sh ~/scripts/fe-iterate.sh'
+
+###########
+# General #
+###########
+alias intellij='open . -a "IntelliJ IDEA"'
+alias ij=intellij
+alias vscode='open . -a "Visual Studio Code"'
+
+alias reload='sh ${pathtoscripts}/reload.sh'

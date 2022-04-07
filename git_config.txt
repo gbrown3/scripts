@@ -1,0 +1,47 @@
+[user]
+    name = Gabriel Brown
+    email = gabriel.brown@rallyhealth.com
+
+[core]
+    editor = vi
+
+[color]
+    branch = auto
+    decorate = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    log = auto
+    showbranch = auto
+    status = auto
+    ui = auto
+
+[diff]
+    algorithm = patience
+    autoRefreshIndex = true
+    indentHeuristic = true
+    mnemonicprefix = true
+    renames = true
+
+[fetch]
+    recurseSubmodules = true
+
+[grep]
+    extendedRegexp = true
+
+[merge]
+    ff = true
+    conflictstyle = diff3
+    verbosity = 3
+
+[alias]
+    cam = commit -am
+    co = checkout
+    pl = pull
+    ps = push
+
+[filesystem "AdoptOpenJDK|1.8.0_212|/dev/disk1s5"]
+        timestampResolution = 1001 milliseconds
+        minRacyThreshold = 0 nanoseconds
+[pull]
+        rebase = false
