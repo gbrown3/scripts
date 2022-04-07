@@ -6,4 +6,4 @@
 # $1 -> environment, ie bluesteel.werally.in
 # $2 -> search string, ie settings
 
-curl "https://ops-proxy.$1/marathon/versions" | jq | grep $2
+curl "https://ops-proxy.$1/marathon/versions" -s | jq | grep $2

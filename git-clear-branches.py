@@ -11,7 +11,7 @@ branches = []
 file = open(branch_filename, "r")
 for line in file:
     stripped_line = line.strip('* \n')
-    if (stripped_line != "" and stripped_line != "master"):
+    if (stripped_line != "" and stripped_line != "master" and stripped_line != "main"):
         branches.append(stripped_line)
 
 file.close()
