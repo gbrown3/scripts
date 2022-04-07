@@ -4,4 +4,4 @@
 filename=~/scripts/output/branches.txt
 git branch > $filename
 
-python ~/scripts/git-clear-branches.py $filename
+python3 ~/scripts/git-clear-branches.py $filename

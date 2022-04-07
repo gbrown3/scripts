@@ -7,17 +7,19 @@ import subprocess
 
 branch_filename = sys.argv[1]
 branches = []
+main_branch_name = "master" # some repos use "master" as the main branch name, others use "main"
 
-file = open(branch_filename, "r")
-for line in file:
-    stripped_line = line.strip('* \n')
-    if (stripped_line != "" and stripped_line != "master" and stripped_line != "main"):
-        branches.append(stripped_line)
+with open(branch_filename, "r") as file:
+    for line in file:
+        stripped_line = line.strip('* \n')
+        if (stripped_line != "" and stripped_line != "master" and stripped_line != "main"):
+            branches.append(stripped_line)
 
-file.close()
+        if (stripped_line == "main"):
+            main_branch_name = "main"
 
-checkout_master = "git checkout master"
-process = subprocess.Popen(checkout_master.split(), stdout=subprocess.PIPE)
+checkout_main_branch = f"git checkout {main_branch_name}"
+process = subprocess.Popen(checkout_main_branch.split(), stdout=subprocess.PIPE)
 process.communicate()
 
 remove_branch = "git branch -D "
