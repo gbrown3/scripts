@@ -1,6 +1,24 @@
 [user]
     name = Gabriel Brown
-    email = gabriel.brown@rallyhealth.com
+    email = TBD
+
+[alias]
+    cam = commit -am
+    co = checkout
+    pl = pull
+    ps = push
+    br = branch
+
+[merge]
+    ff = true
+    conflictstyle = diff3
+    verbosity = 3
+
+[pull]
+    rebase = false
+
+[push]
+    autoSetupRemote = true
 
 [core]
     editor = vi
@@ -28,20 +46,3 @@
 
 [grep]
     extendedRegexp = true
-
-[merge]
-    ff = true
-    conflictstyle = diff3
-    verbosity = 3
-
-[alias]
-    cam = commit -am
-    co = checkout
-    pl = pull
-    ps = push
-
-[filesystem "AdoptOpenJDK|1.8.0_212|/dev/disk1s5"]
-        timestampResolution = 1001 milliseconds
-        minRacyThreshold = 0 nanoseconds
-[pull]
-        rebase = false
